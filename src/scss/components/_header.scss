@@ -1,0 +1,49 @@
+.navbar {
+  //   background: dodgerblue;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all 0.3s;
+  background: #fff;
+  z-index: 100;
+  &.shrink {
+    // background: palevioletred;
+    box-shadow: 3px 3px 5px rgba(132, 132, 132, 0.2);
+    nav {
+      height: 55px;
+    }
+  }
+  nav {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    .nav__items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      a {
+        font-family: Poppins;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 36px;
+        text-align: left;
+        color: #262626;
+        transition: 0.2s;
+        &:hover {
+          color: #40bfff;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 666px) {
+    nav {
+      .nav__items {
+        display: none;
+      }
+    }
+  }
+}
