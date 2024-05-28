@@ -13,7 +13,7 @@ const Banner = () => {
             <button>shop now</button>
           </div>
           <div className="card">
-            <Image src={sneakers} />
+            <Image src={sneakers} width={100} height={100} alt="img" />
           </div>
         </div>
       </div>
