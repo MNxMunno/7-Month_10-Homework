@@ -6,16 +6,16 @@ import logo from "@/assets/images/logo.svg";
 import Link from "next/link";
 
 const Header = () => {
-  const [shrink, setShrink] = useState(false);
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 30) {
-      setShrink(true);
-    } else {
-      setShrink(false);
-    }
-  });
+  // const [shrink, setShrink] = useState(false);
+  // window.addEventListener("scroll", () => {
+  //   if (window.scrollY > 30) {
+  //     setShrink(true);
+  //   } else {
+  //     setShrink(false);
+  //   }
+  // });
   return (
-    <header className={`navbar ${shrink ? "shrink" : ""}`}>
+    <header className="navbar">
       <div className="container">
         <nav>
           <Link className="logo" href={"/"}>
