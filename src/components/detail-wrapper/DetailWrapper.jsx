@@ -1,9 +1,9 @@
 import React from "react";
 
-const DetailWrapper = ({ data }) => {
+const DetailWrapper = () => {
   return (
     <div>
-      <h2>{data?.title}</h2>
+      <h2>detail</h2>
     </div>
   );
 };
