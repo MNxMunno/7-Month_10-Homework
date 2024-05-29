@@ -1,3 +1,4 @@
+"use client";
 import { createSlice } from "@reduxjs/toolkit";
 import { Bounce, toast } from "react-toastify";
 
@@ -19,7 +20,7 @@ const cartSlice = createSlice({
         );
         toast("Maxsulot qo`shildi 😊", {
           position: "top-center",
-          autoClose: 5000,
+          autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,

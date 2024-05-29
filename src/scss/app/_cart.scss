@@ -1,0 +1,46 @@
+.shopCart {
+  .cards {
+    .card {
+      padding: 15px 0;
+      display: grid;
+      grid-template-columns: 0.2fr 0.3fr 1.7fr;
+      gap: 32px;
+      img {
+        height: 94px;
+        width: 137px;
+        object-fit: contain;
+      }
+      .content {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 0.1fr 0.3fr 0.1fr;
+        flex-wrap: wrap;
+        h3 {
+          font-family: Poppins;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 27px;
+          text-align: left;
+          color: #262626;
+        }
+        .quant {
+          color: #33a0ff;
+        }
+        .btns {
+          width: 115px;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          background: #f6f7f8;
+          padding: 12px 19px;
+          margin: auto;
+          button {
+            color: #33a0ff;
+            font-family: sans-serif;
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+}
