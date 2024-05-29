@@ -1,3 +1,43 @@
+.header__top {
+  padding: 10px 0;
+  border-bottom: 2px solid #cccccc2c;
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    .top__btns {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      button {
+        position: relative;
+        svg {
+          font-size: 25px;
+        }
+        .count {
+          position: absolute;
+          top: -7px;
+          right: -10px;
+          background: #ff4858;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          //styleName: Caption/normalbold;
+          font-family: Poppins;
+          font-size: 10px;
+          font-weight: 700;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
 .navbar {
   //   background: dodgerblue;
   position: sticky;

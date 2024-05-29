@@ -1,17 +1,23 @@
 .product {
   .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-direction: column;
+    padding: 94px 0;
     .cards {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 10px;
       flex-wrap: wrap;
       justify-content: space-between;
       padding: 23px 0 36px;
       .card {
-        width: 299px;
+        width: 289px;
         transition: 0.2s;
         position: relative;
-
+        border: 2px solid rgba(209, 209, 209, 0.245);
         padding: 10px;
         img {
           max-width: 290px;
@@ -24,14 +30,35 @@
           align-items: center;
           justify-content: center;
           position: absolute;
+          gap: 15px;
           top: 10%;
-          width: 100%;
+          left: 10%;
+
+          width: 80%;
           background: #fff;
-          padding: 82px;
+          padding: 82px 0;
           opacity: 0;
+          backdrop-filter: blur(14px);
           transition: 0.3s;
+          button {
+            border-radius: 50%;
+            border: 2px solid #33a0ff70;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 52px;
+            height: 52px;
+            padding: 15px;
+            svg {
+              color: #33a0ff;
+              font-size: 17px;
+            }
+          }
         }
         h3 {
+          padding-top: 9px;
           display: -webkit-box;
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 1;
@@ -41,15 +68,65 @@
           font-weight: 700;
           line-height: 27px;
           letter-spacing: 0.5px;
-          text-align: left;
+          text-align: center;
           color: #223263;
         }
+        .stars {
+          text-align: center;
+          padding: 6px 0;
+        }
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          font-family: Poppins;
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 32.4px;
+          letter-spacing: 0.5px;
+          text-align: left;
+          color: #33a0ff;
+          del {
+            font-family: Poppins;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            letter-spacing: 0.5px;
+            text-align: left;
+            color: #9098b1;
+          }
+          b {
+            font-family: Poppins;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 21px;
+            letter-spacing: 0.5px;
+            text-align: left;
+            color: #fb7181;
+          }
+        }
         &:hover {
+          box-shadow: 4px 3px 5px rgba(141, 141, 141, 0.2);
+          img {
+            filter: blur(4px);
+          }
           .detail__btns {
-            opacity: 1;
+            opacity: 0.85;
           }
         }
       }
+    }
+    .btn {
+      font-family: Poppins;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: underline;
+      padding-bottom: 5px;
+      color: #33a0ff;
     }
   }
 }
