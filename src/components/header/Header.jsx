@@ -49,7 +49,7 @@ const Header = () => {
               </select>
             </div>
             <div className="top__btns">
-              <button onClick={() => navigate.push("/login")}>
+              <button>
                 <FaRegUser />
               </button>
               <button onClick={() => navigate.push("/wishlist")}>
