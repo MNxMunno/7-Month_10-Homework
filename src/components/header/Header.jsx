@@ -10,13 +10,13 @@ import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 
 const Header = () => {
-  // const cart = useSelector((s) => s.cart.value);
+  const cart = useSelector((s) => s.cart.value);
   const wishlist = useSelector((s) => s.heart.value);
   const [shrink, setShrink] = useState(false);
   const navigate = useRouter();
-  // let totalPrice = cart
-  //   ?.reduce((acc, el) => acc + el.price * el.quantity, 0)
-  //   .toFixed(2);
+  let totalPrice = cart
+    ?.reduce((acc, el) => acc + el.price * el.quantity, 0)
+    .toFixed(2);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,10 +58,10 @@ const Header = () => {
               </button>
               <button onClick={() => navigate.push("/cart")}>
                 <MdOutlineShoppingCart />
-                {/* <sup className="count">{cart.length}</sup> */}
+                <sup className="count">{cart.length}</sup>
               </button>
               <p> Items</p>
-              {/* <b>$ {totalPrice}</b> */}
+              <b>$ {totalPrice}</b>
               <button>
                 <FaSearch />
               </button>

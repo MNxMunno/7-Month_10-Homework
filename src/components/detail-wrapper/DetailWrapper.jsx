@@ -1,16 +1,43 @@
 "use client";
 
+import { addToCart } from "@/lib/features/slice/cartSlice";
 // import { addToCart } from "@/lib/features/slice/cartSlice";
 import { toggleHeart } from "@/lib/features/wishlist/hearSlice";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import { FaCartPlus, FaHeart, FaRegHeart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 
 const DetailWrapper = ({ data }) => {
   let wishlist = useSelector((state) => state.heart.value);
-
+  let cart = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(addToCart(JSON.parse(localStorage.getItem("cart")) || []));
+    dispatch(toggleHeart(JSON.parse(localStorage.getItem("wishlist")) || []));
+  }, []);
+  const handleLike = (product) => {
+    let index = wishlist.findIndex((el) => el.id === product.id);
+    let result = null;
+    if (index < 0) {
+      result = [...wishlist, product];
+    } else {
+      result = wishlist.filter((el) => el.id !== product.id);
+    }
+    dispatch(toggleHeart(result));
+    localStorage.setItem("wishlist", JSON.stringify(result));
+  };
+  const handleCart = (product) => {
+    let index = cart.findIndex((el) => el.id === product.id);
+    let result = cart;
+    if (index < 0) {
+      result = [...cart, { ...product, quantity: 1 }];
+    }
+    dispatch(addToCart(result));
+    localStorage.setItem("cart", JSON.stringify(result));
+  };
+
   return (
     <section className="detailWrapper">
       <div className="container">
@@ -75,11 +102,11 @@ const DetailWrapper = ({ data }) => {
             </div>
             <div className="color"></div>
             <div className="btns">
-              {/* <button onClick={() => dispatch(addToCart(data))}>
+              <button onClick={() => handleCart(data)}>
                 <FaCartPlus />
                 Add To Cart
-              </button> */}
-              <button onClick={() => dispatch(toggleHeart(data))}>
+              </button>
+              <button onClick={() => handleLike(data)}>
                 {wishlist?.some((item) => item.id === data?.id) ? (
                   <FaHeart style={{ color: "red" }} />
                 ) : (
