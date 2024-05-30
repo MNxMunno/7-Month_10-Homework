@@ -1,6 +1,6 @@
 "use client";
 import { addToCart } from "@/lib/features/slice/cartSlice";
-import { toggleHeart } from "@/lib/features/wishlist/hearSlice";
+// import { toggleHeart } from "@/lib/features/wishlist/hearSlice";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

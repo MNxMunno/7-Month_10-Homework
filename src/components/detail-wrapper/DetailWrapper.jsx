@@ -1,6 +1,6 @@
 "use client";
 
-import { addToCart } from "@/lib/features/slice/cartSlice";
+// import { addToCart } from "@/lib/features/slice/cartSlice";
 import { toggleHeart } from "@/lib/features/wishlist/hearSlice";
 import Image from "next/image";
 import React from "react";
@@ -75,10 +75,10 @@ const DetailWrapper = ({ data }) => {
             </div>
             <div className="color"></div>
             <div className="btns">
-              <button onClick={() => dispatch(addToCart(data))}>
+              {/* <button onClick={() => dispatch(addToCart(data))}>
                 <FaCartPlus />
                 Add To Cart
-              </button>
+              </button> */}
               <button onClick={() => dispatch(toggleHeart(data))}>
                 {wishlist?.some((item) => item.id === data?.id) ? (
                   <FaHeart style={{ color: "red" }} />
