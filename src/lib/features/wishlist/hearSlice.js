@@ -2,7 +2,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: JSON.parse(localStorage.getItem("wishlist")) || [],
+  value: JSON.parse(window.localStorage.getItem("wishlist")) || [],
 };
 
 const wishlist = createSlice({
@@ -16,7 +16,7 @@ const wishlist = createSlice({
       } else {
         state.value = state.value.filter((el) => el.id !== action.payload.id);
       }
-      localStorage.setItem("wishlist", JSON.stringify(state.value));
+      window.localStorage.setItem("wishlist", JSON.stringify(state.value));
     },
   },
 });

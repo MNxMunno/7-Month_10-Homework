@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { Bounce, toast } from "react-toastify";
 
 const initialState = {
-  value: JSON.parse(localStorage.getItem("cart")) || [],
+  value: JSON.parse(window.localStorage.getItem("cart")) || [],
 };
 const cartSlice = createSlice({
   name: "cart",
@@ -34,18 +34,18 @@ const cartSlice = createSlice({
     },
     removeFromCart: (state, action) => {
       state.value = state.value.filter((i) => i.id !== action.payload);
-      localStorage.setItem("cart", JSON.stringify(state.value));
+      window.localStorage.setItem("cart", JSON.stringify(state.value));
     },
     decrementCart: (state, action) => {
       let index = state.value.findIndex((i) => i.id === action.payload.id);
       state.value = state.value.map((item, inx) =>
         inx === index ? { ...item, quantity: item.quantity - 1 } : item
       );
-      localStorage.setItem("cart", JSON.stringify(state.value));
+      window.localStorage.setItem("cart", JSON.stringify(state.value));
     },
     deleteAllCart: (state) => {
       state.value = [];
-      localStorage.removeItem("cart");
+      window.localStorage.removeItem("cart");
     },
   },
 });

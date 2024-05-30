@@ -88,6 +88,13 @@ const DetailWrapper = ({ data }) => {
               </button>
             </div>
           </div>
+          <div className="second_cart">
+            <Image src={data?.image} alt="img" width={100} height={100} />
+            <p>⭐⭐⭐⭐⭐</p>{" "}
+            <span>
+              ${data?.price} <del>$ {data?.price * 1.5}</del>
+            </span>
+          </div>
         </div>
       </div>
     </section>

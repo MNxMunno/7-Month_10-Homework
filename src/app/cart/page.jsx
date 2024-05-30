@@ -19,6 +19,10 @@ const Cart = () => {
   console.log(addTo);
   const dispatch = useDispatch();
 
+  let totalPrice = addTo
+    ?.reduce((acc, el) => acc + el.price * el.quantity, 0)
+    .toFixed(2);
+
   const card = addTo?.map((el) => (
     <div className="card" key={el.id}>
       <button onClick={() => dispatch(removeFromCart(el.id))}>
@@ -38,18 +42,13 @@ const Cart = () => {
             -
           </button>
           <span>{el.quantity}</span>
-          <button
-            disabled={el.quantity >= 10}
-            onClick={() => dispatch(addToCart(el))}
-          >
-            +
-          </button>
+          <button onClick={() => dispatch(addToCart(el))}>+</button>
         </div>
-        <b className="quant">${el.price * el.quantity}</b>
+        <b className="quant">${totalPrice}</b>
       </div>
     </div>
   ));
-  // console.log(card);
+
   return (
     <section className="shopCart">
       <div className="container">
