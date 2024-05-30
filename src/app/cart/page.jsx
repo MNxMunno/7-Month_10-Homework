@@ -15,8 +15,8 @@ const Cart = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // const addTo = useSelector((s) => s.cart.value);
-  console.log(addTo);
+  const addTo = useSelector((s) => s.cart.value);
+  // console.log(addTo);
   const dispatch = useDispatch();
 
   let totalPrice = addTo
