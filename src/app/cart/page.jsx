@@ -17,9 +17,9 @@ import {
 } from "@/lib/features/slice/cartSlice";
 
 const Cart = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   const cart = useSelector((s) => s.cart.value);
   console.log(cart);

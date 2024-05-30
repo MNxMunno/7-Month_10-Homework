@@ -4,9 +4,9 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 const Wishlist = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
   const data = useSelector((state) => state.heart.value);
 
   return <Products data={data} />;
