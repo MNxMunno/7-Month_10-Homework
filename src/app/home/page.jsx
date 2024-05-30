@@ -11,9 +11,9 @@ import { useEffect, useState } from "react";
 // import React, { useEffect } from "react";
 
 export default function Home() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   const [data, setData] = useState([]);
 
